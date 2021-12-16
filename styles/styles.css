@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "ESAllianz";
+  src: url("/assets/fonts/ESAllianz.woff2") format("woff2");
+}
+@font-face {
+  font-family: "ESFace";
+  src: url("/assets/fonts/ESFace.woff2") format("woff2");
+}
+@font-face {
+  font-family: "ESKlarheitGrotesk";
+  src: url("/assets/fonts/ESKlarheitGrotesk.woff2") format("woff2");
+}
+* {
+  overflow-x: hidden;
+  pointer-events: none;
+}
+
+.page {
+  margin: 0;
+}
+
+.landing {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #1e1e1e;
+  background-image: url("/assets/img/background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+}
+.landing__text {
+  height: 5vw;
+}
+.landing--top {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.landing--bottom {
+  position: fixed;
+  right: 0;
+  bottom: -0.3vh;
+}
+.landing__hint {
+  right: 0;
+  bottom: 0;
+  display: inline-block;
+  height: 1vw;
+  margin-right: -1vw;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
