@@ -2,8 +2,11 @@
 @import 'partials/fonts';
 
 * {
-  overflow-x     : hidden;
-  pointer-events : none;
+  overflow-x : hidden;
+}
+
+::-webkit-scrollbar {
+  display : none;
 }
 
 .page {
@@ -46,6 +49,29 @@
   }
 }
 
-::-webkit-scrollbar {
-  display : none;
+.parallax {
+  position : absolute;
+  top      : 100%;
+
+  &__lavender {
+    position : relative;
+    z-index  : 3;
+  }
+
+  &__sky {
+    position : relative;
+    z-index  : 5;
+  }
+
+  &__tulips {
+    position : relative;
+    z-index  : 7;
+  }
+
+  &__foreground {
+    position : relative;
+    z-index  : 9;
+  }
 }
+
+
