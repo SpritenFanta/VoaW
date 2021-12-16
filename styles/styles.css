@@ -10,16 +10,18 @@
   font-family: "ESKlarheitGrotesk";
   src: url("/assets/fonts/ESKlarheitGrotesk.woff2") format("woff2");
 }
-* {
-  overflow-x: hidden;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
 
-.page {
+* {
   margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+.page {
+  overflow-x: hidden;
 }
 
 .landing {
@@ -54,25 +56,28 @@
   margin-right: -1vw;
 }
 
-.parallax {
+.content {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  perspective: 2px;
+}
+.content__parallax--layer-0 {
   position: absolute;
-  top: 100%;
+  top: 102%;
+  width: 100vw;
 }
-.parallax__lavender {
-  position: relative;
-  z-index: 3;
+.content__parallax--layer-1 {
+  position: absolute;
+  top: 80%;
+  width: 100vw;
+  transform: translateZ(0.5px) scale(0.75);
 }
-.parallax__sky {
-  position: relative;
-  z-index: 5;
-}
-.parallax__tulips {
-  position: relative;
-  z-index: 7;
-}
-.parallax__foreground {
-  position: relative;
-  z-index: 9;
+.content__parallax--layer-2 {
+  position: absolute;
+  top: 90%;
+  width: 100vw;
+  transform: translateZ(1px) scale(0.5);
 }
 
 /*# sourceMappingURL=styles.css.map */

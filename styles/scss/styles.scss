@@ -1,16 +1,18 @@
 @import 'partials/colors';
 @import 'partials/fonts';
 
-* {
-  overflow-x : hidden;
-}
-
 ::-webkit-scrollbar {
   display : none;
 }
 
+* {
+  margin          : 0;
+  padding         : 0;
+  scroll-behavior : smooth;
+}
+
 .page {
-  margin : 0;
+  overflow-x : hidden;
 }
 
 .landing {
@@ -49,29 +51,33 @@
   }
 }
 
-.parallax {
-  position : absolute;
-  top      : 100%;
+.content {
+  overflow-x  : hidden;
+  overflow-y  : auto;
+  height      : 100vh;
+  perspective : 2px;
 
-  &__lavender {
-    position : relative;
-    z-index  : 3;
-  }
+  &__parallax {
 
-  &__sky {
-    position : relative;
-    z-index  : 5;
-  }
+    &--layer-0 {
+      position : absolute;
+      top      : 102%;
+      width    : 100vw;
 
-  &__tulips {
-    position : relative;
-    z-index  : 7;
-  }
+    }
 
-  &__foreground {
-    position : relative;
-    z-index  : 9;
+    &--layer-1 {
+      position  : absolute;
+      top       : 80%;
+      width     : 100vw;
+      transform : translateZ(0.5px) scale(0.75);
+    }
+
+    &--layer-2 {
+      position  : absolute;
+      top       : 90%;
+      width     : 100vw;
+      transform : translateZ(1px) scale(0.5);
+    }
   }
 }
-
-
