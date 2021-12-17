@@ -6,9 +6,8 @@
 }
 
 * {
-  margin          : 0;
-  padding         : 0;
-  scroll-behavior : smooth;
+  margin  : 0;
+  padding : 0;
 }
 
 .page {
@@ -51,23 +50,25 @@
   }
 }
 
-.content {
-  overflow-x  : hidden;
-  overflow-y  : auto;
-  height      : 100vh;
-  perspective : 2px;
+.main {
+  overflow-x       : hidden;
+  overflow-y       : auto;
+  height           : 100vh;
+  perspective      : 2px;
+  scroll-snap-type : y proximity;
 
   &__parallax {
 
     &--layer-0 {
       position : absolute;
+      z-index  : 2;
       top      : 102%;
       width    : 100vw;
-
     }
 
     &--layer-1 {
       position  : absolute;
+      z-index   : 4;
       top       : 80%;
       width     : 100vw;
       transform : translateZ(0.5px) scale(0.75);
@@ -75,9 +76,82 @@
 
     &--layer-2 {
       position  : absolute;
+      z-index   : 6;
       top       : 90%;
       width     : 100vw;
       transform : translateZ(1px) scale(0.5);
+    }
+  }
+}
+
+.content {
+  font-family       : ESKlarheitGrotesk, sans-serif;
+  position          : absolute;
+  z-index           : 5;
+  top               : 191%;
+  width             : 100vw;
+  height            : 500vh;
+  color             : $dark;
+  background-color  : $light;
+}
+
+.heading {
+  position : absolute;
+  width    : 100vw;
+  padding  : 2vw;
+  scroll-snap-align : start;
+
+  &__numeration {
+    position : absolute;
+    right    : 10%;
+    display  : inline-block;
+    width    : 5vh;
+    height   : auto;
+  }
+
+  &__text {
+    font-family : 'ESAllianz', sans-serif;
+    font-size   : 4vh;
+    position    : absolute;
+    left        : 5%;
+    display     : inline-block;
+  }
+
+  &__arrow {
+    position : absolute;
+    top      : 50%;
+    left     : 2%;
+    display  : inline-block;
+    width    : 5vh;
+  }
+}
+
+.gallery {
+  position   : fixed;
+  width      : 100vw;
+  margin-top : 5vh;
+  padding    : 3vh;
+
+  &__item {
+    position   : relative;
+    height     : 38vh;
+    margin     : 1vw;
+    transition : all 2s ease-in-out, transform 0.54s;
+
+    &:hover {
+      z-index   : 2;
+      transform : scale(1.1);
+      filter    : none;
+    }
+
+    &:focus {
+      position   : absolute !important;
+      z-index    : 4;
+      top        : 50% !important;
+      right      : 5% !important;
+      transition : all 1s ease-in-out, transform 0.54s;
+      transform  : scale(2) translate(-25%, -25%);
+      filter     : none;
     }
   }
 }
